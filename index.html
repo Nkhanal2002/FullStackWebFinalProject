@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoApp</title>
+    <link rel="stylesheet" href="./index.css" />
+
+    <!-- favIcon links from https://www.favicon-generator.org/ -->
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="./Public/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="./Public/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="./Public/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="./Public/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="./Public/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="./Public/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="./Public/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="./Public/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./Public/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="./Public/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./Public/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="./Public/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./Public/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./Public/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta
+      name="msapplication-TileImage"
+      content="./Public/ms-icon-144x144.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- fontawesome to link in html -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body class="font-serif">
+    <div
+      class="mainContainer h-screen bg-slate-100 flex flex-col justify-center items-center"
+    >
+      <div
+        class="subContainer w-[90%] sm:w-[40rem] bg-slate-50 rounded-md shadow-md flex flex-col justify-center"
+      >
+        <div class="logInPage w-[85%] sm:w-[50%] mx-auto px-4 py-4 sm:px-0">
+          <h2 class="text-center font-bold text-xl">Welcome</h2>
+          <h3 class="text-center text-base mb-6 text-green-600">
+            Please Log In to get start!
+          </h3>
+          <div class="flex flex-col gap-4">
+          <form class="flex flex-col gap-4">
+            <input
+              class="loginUsername bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+              type="text"
+              placeholder="Username"
+              required
+            />
+            <input
+              class="loginPassword bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+              type="password"
+              placeholder="Password"
+              required
+            />
+            <input
+              id="login-btn"
+              type="submit"
+              value="Log In"
+              class="bg-green-600 text-white p-2 rounded-md cursor-pointer active:bg-green-500"
+            />
+            </form>
+            <hr class=" border-black"/>
+            <div class="signupContainer">
+              <p class="text-center">
+                Don't have an account?
+                <a href="#" class="signUpLink text-blue-500 hover:underline"
+                  >Sign Up</a
+                >
+              </p>
+            </div>
+            <div id="error" class="text-red-500 text-center"></div>
+          </div>
+        </div>
+        <div class="hidden-class signUpPage w-[85%] sm:w-[50%] mx-auto px-4 sm:px-0 py-4">
+          <h2 class="text-center font-bold text-xl">Welcome</h2>
+          <h3 class="text-center text-base mb-6 text-green-600">
+            Please Sign Up to get start!
+          </h3>
+          <form class="flex flex-col gap-4">
+            <input
+              class="signUpUsername bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+              type="text"
+              placeholder="Username"
+              required
+            />
+            <input
+              class="signUpPassword bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+              type="password"
+              placeholder="Password"
+              required
+            />
+            <input
+              class="signUpName bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+              type="text"
+              placeholder="Name"
+              required
+            />
+            <input
+              class="signUpEmail bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+              type="email"
+              placeholder="Email"
+              required
+            />
+            <input
+              id="signup-btn"
+              type="submit"
+              value="Sign Up"
+              class="bg-green-600 text-white p-2 rounded-md cursor-pointer active:bg-green-500"
+            />
+            <hr class="border-black" />
+            <div class="signupContainer">
+              <p class="text-center">
+                Already have an account?
+                <a href="#" class="logInLink text-blue-500 hover:underline"
+                  >Log In</a
+                >
+              </p>
+            </div>
+            <div id="error" class="text-red-500 text-center"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div
+      class="hidden-class mainPage w-[90%] mx-auto my-auto mt-4 p-4 bg-slate-50 rounded-md shadow-sm"
+    >
+      <div
+        class="todo-container flex flex-col justify-center items-center gap-4 sm:flex sm:flex-row sm:justify-between sm:items-center"
+      >
+        <div class="headerIcon flex flex-row items-center gap-2">
+          <img
+            class="w-6 md:w-10 rounded-full"
+            src="./Public/todoImg.jpeg"
+            alt="TodoIcon"
+          />
+          <h2 class="font-bold text-lg md:text-2xl">ToDoList</h2>
+        </div>
+
+        <div class="btns flex gap-4 justify-center items-center">
+          <button
+            class="addTask-btn text-sm md:text-base border border-black px-2 py-0.5 rounded-xl cursor-pointer hover:bg-slate-600 active:hover:bg-slate-600 hover:text-white"
+          >
+            Add New
+          </button>
+          <button
+            class="signOut-btn text-sm md:text-base bg-red-400 text-white px-2 py-0.5 rounded-xl cursor-pointer hover:bg-red-500 active:bg-red-500"
+          >
+            Sign Out
+          </button>
+        </div>
+      </div>
+      <div class="subHeader mt-2">
+        <p class="text-center sm:text-right">Welcome back, <span id="name"></span></p>
+      </div>
+      <hr class="my-2 border-black" />
+      <div class="tasks relative">
+        <div class="createTaskContainer absolute inset-0">
+          <div
+            class="hidden-class addTaskContainer max-w-[27rem] mx-auto my-4 bg-slate-50 px-4 py-6 rounded-md shadow-md relative"
+          >
+            <i
+              class="crossMark fa-solid fa-circle-xmark text-2xl absolute right-[-7px] top-[-7px] hover:text-red-500 active:text-red-400 transition-all"
+            ></i>
+            <div class="taskHeader">
+              <h3 class="text-base font-bold md:text-lg">Create Your Task</h3>
+            </div>
+            <form class="taskFormContainer">
+              <input
+                class="inputTask mt-5 text-sm md:text-base bg-slate-50 px-3 py-2 w-full border border-black rounded-xl"
+                type="text"
+                placeholder="Write your task here"
+                required
+              />
+              <input
+                id="submitTaskBtn"
+                type="submit"
+                value="Create"
+                class="bg-green-600 text-sm md:text-base text-white mt-4 w-full p-2 rounded-xl cursor-pointer active:bg-green-500"
+              />
+            </form>
+          </div>
+          <div id="error" class="text-red-500 text-center"></div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

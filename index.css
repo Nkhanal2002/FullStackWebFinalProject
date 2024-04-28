@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* using css for different classes */
+.hidden-class{
+    display:none;
+}
