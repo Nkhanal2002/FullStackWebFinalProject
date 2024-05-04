@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ToDoApp</title>
+    <title>ToDoWebApp</title>
     <link rel="stylesheet" href="./index.css" />
 
     <!-- favIcon links from https://www.favicon-generator.org/ -->
@@ -92,10 +92,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    
   </head>
   <body class="font-serif">
     <div
-      class="mainContainer h-screen bg-slate-100 flex flex-col justify-center items-center"
+      class="credentialsContainer h-screen bg-slate-100 flex flex-col justify-center items-center"
     >
       <div
         class="subContainer w-[90%] sm:w-[40rem] bg-slate-50 rounded-md shadow-md flex flex-col justify-center"
@@ -107,24 +108,30 @@
           </h3>
           <div class="flex flex-col gap-4">
           <form class="flex flex-col gap-4">
-            <input
-              class="loginUsername bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+            <div class="inputDiv relative">
+              <input id = "loginUsername"
+              class="targetInput bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg w-full"
               type="text"
               placeholder="Username"
               required
             />
-            <input
-              class="loginPassword bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+            <i class="fa-solid fa-user-tag absolute top-4 right-5 text-gray-600"></i> 
+            </div>
+            <div class="inputDiv relative">
+              <input id = "loginPassword"
+              class="targetInput bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg w-full"
               type="password"
               placeholder="Password"
-              required
-            />
+              required />
+            <i class="fa-solid fa-lock absolute top-4 right-5 text-gray-600"></i>
+            </div>
             <input
               id="login-btn"
               type="submit"
               value="Log In"
               class="bg-green-600 text-white p-2 rounded-md cursor-pointer active:bg-green-500"
             />
+            
             </form>
             <hr class=" border-black"/>
             <div class="signupContainer">
@@ -144,30 +151,43 @@
             Please Sign Up to get start!
           </h3>
           <form class="flex flex-col gap-4">
-            <input
-              class="signUpUsername bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+            <div class="inputDiv relative">
+              <input id = "signUpUsername"
+              class="targetInput bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg w-full"
               type="text"
               placeholder="Username"
               required
             />
-            <input
-              class="signUpPassword bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+            <i class="fa-solid fa-user-tag absolute top-4 right-5 text-gray-600"></i> 
+            </div>
+            <div class="inputDiv relative">
+              <input id = "signUpPassword"
+              class="targetInput bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg w-full"
               type="password"
               placeholder="Password"
               required
             />
-            <input
-              class="signUpName bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+            <i class="fa-solid fa-lock absolute top-4 right-5 text-gray-600"></i>
+            </div>
+            <div class="inputDiv relative">
+              <input id ="signUpName"
+              class="targetInput bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg w-full"
               type="text"
               placeholder="Name"
               required
             />
-            <input
-              class="signUpEmail bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg"
+            <i class="fa-solid fa-user absolute top-4 right-5 text-gray-600"></i> 
+            </div>
+            <div class="inputDiv relative">
+              <input id ="signUpEmail"
+              class="targetInput bg-slate-50 px-3 py-2 border-b border-black rounded-b-lg w-full"
               type="email"
               placeholder="Email"
               required
             />
+            <i class="fa-solid fa-envelope absolute top-4 right-5 text-gray-600"></i>
+            </div>
+            
             <input
               id="signup-btn"
               type="submit"
@@ -194,7 +214,7 @@
       <div
         class="todo-container flex flex-col justify-center items-center gap-4 sm:flex sm:flex-row sm:justify-between sm:items-center"
       >
-        <div class="headerIcon flex flex-row items-center gap-2">
+        <div class="headerIcon flex flex-col sm:flex sm:flex-row sm:gap-1 items-center">
           <img
             class="w-6 md:w-10 rounded-full"
             src="./Public/todoImg.jpeg"
@@ -203,7 +223,7 @@
           <h2 class="font-bold text-lg md:text-2xl">ToDoList</h2>
         </div>
 
-        <div class="btns flex gap-4 justify-center items-center">
+        <div class="btns flex flex-row gap-2 sm:gap-4">
           <button
             class="addTask-btn text-sm md:text-base border border-black px-2 py-0.5 rounded-xl cursor-pointer hover:bg-slate-600 active:hover:bg-slate-600 hover:text-white"
           >
@@ -219,21 +239,21 @@
       <div class="subHeader mt-2">
         <p class="text-center sm:text-right">Welcome back, <span id="name"></span></p>
       </div>
-      <hr class="my-2 border-black" />
+      <hr class="my-2 border-black"/>
       <div class="tasks relative">
         <div class="createTaskContainer absolute inset-0">
           <div
             class="hidden-class addTaskContainer max-w-[27rem] mx-auto my-4 bg-slate-50 px-4 py-6 rounded-md shadow-md relative"
           >
-            <i
-              class="crossMark fa-solid fa-circle-xmark text-2xl absolute right-[-7px] top-[-7px] hover:text-red-500 active:text-red-400 transition-all"
+            <i id = "createCrossMark"
+              class=" fa-solid fa-circle-xmark text-2xl absolute right-[-7px] top-[-7px] hover:text-red-500 active:text-red-400 transition-all"
             ></i>
             <div class="taskHeader">
               <h3 class="text-base font-bold md:text-lg">Create Your Task</h3>
             </div>
             <form class="taskFormContainer">
               <input
-                class="inputTask mt-5 text-sm md:text-base bg-slate-50 px-3 py-2 w-full border border-black rounded-xl"
+                class="inputAddTask mt-5 text-sm md:text-base bg-slate-50 px-3 py-2 w-full border border-black rounded-xl"
                 type="text"
                 placeholder="Write your task here"
                 required
@@ -246,10 +266,38 @@
               />
             </form>
           </div>
+          <div
+            class="hidden-class editTaskContainer max-w-[27rem] mx-auto my-4 bg-slate-50 px-4 py-6 rounded-md shadow-md relative"
+          >
+            <i id="editCrossMark"
+              class="fa-solid fa-circle-xmark text-2xl absolute right-[-7px] top-[-7px] hover:text-red-500 active:text-red-400 transition-all"
+            ></i>
+            <div class="taskHeader">
+              <h3 class="text-base font-bold md:text-lg">Edit Your Task</h3>
+            </div>
+            <form class = "taskFormContainer">
+              <input
+                class = "inputEditTask mt-5 text-sm md:text-base bg-slate-50 px-3 py-2 w-full border border-black rounded-xl"
+                type = "text"
+                placeholder = "Write your task here"
+                required
+              />
+              <input
+                id="submitEditTaskBtn"
+                type="submit"
+                value="Edit"
+                class="bg-green-600 text-sm md:text-base text-white mt-4 w-full p-2 rounded-xl cursor-pointer active:bg-green-500"
+              />
+            </form>
+          </div>
           <div id="error" class="text-red-500 text-center"></div>
         </div>
+      </div>
+      <div class="mainTasks">
+
       </div>
     </div>
     <script src="./script.js"></script>
   </body>
+  
 </html>

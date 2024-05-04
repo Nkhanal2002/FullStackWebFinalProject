@@ -1,1 +1,5 @@
-node_modules
+#ignore dependencies
+node_modules/
+
+#ignore .jsonl file
+users.jsonl
