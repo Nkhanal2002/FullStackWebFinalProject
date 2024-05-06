@@ -18,7 +18,7 @@ app.get("/users", (req, res) => {
     .catch((error) => res.send({ error }));
 });
 
-// for login
+//login route
 app.post('/users/auth', (req, res) => {
   const { username, password } = req.body
 
@@ -43,7 +43,7 @@ app.post('/users/auth', (req, res) => {
     .catch((error) => res.send({ error }))
 })
 
-// for signup
+// signup route
 app.post('/users', (req, res) => {
   if (
     req.body.username &&

@@ -3,3 +3,6 @@ node_modules/
 
 #ignore .jsonl file
 users.jsonl
+
+#misc
+.DS_Store

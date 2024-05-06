@@ -8,3 +8,5 @@
 {"_id":"Don","name":"Donald","email":"donald@gmail.com","password":"$2b$10$ZCGy46WajyAYD3fBP29ureFGKuhdR11Wa9PgKBDHxScZ4XdUkjpTi","authToken":"c17354a4c53b12f3c5548c0a28c2d8e531c79f297d0c7de411078a06fb49"}
 {"_id":"Don","name":"Donald","email":"donald@gmail.com","password":"$2b$10$ZCGy46WajyAYD3fBP29ureFGKuhdR11Wa9PgKBDHxScZ4XdUkjpTi","authToken":"5eae2a00f2bba75c71c785c4ad9d9aca089b92be81890bc600b427e0663f"}
 {"_id":"Philemon","name":"Philemon","email":"philemon@caldwell.edu","password":"$2b$10$r0XWa74TEZh5UIbP113sfO6XgUl7EsklNx6WZhqt4opUkYddcP4A2","authToken":"5dee7db4c2064d6b58081327a7a3ae9137a66d26b4fba67ca587933389f3"}
+{"_id":"Don","name":"Donald","email":"donald@gmail.com","password":"$2b$10$ZCGy46WajyAYD3fBP29ureFGKuhdR11Wa9PgKBDHxScZ4XdUkjpTi","authToken":"8e0fa8d8e0ae6bea11f4c2df9ff8a83d1a58fc6408a5de3a2d87617c923c"}
+{"_id":"Don","name":"Donald","email":"donald@gmail.com","password":"$2b$10$ZCGy46WajyAYD3fBP29ureFGKuhdR11Wa9PgKBDHxScZ4XdUkjpTi","authToken":"4d0a7367ef666fb3237a9f4a1c9059f872c52a6c999a78fc3cde3f18ada3"}
