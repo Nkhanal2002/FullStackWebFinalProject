@@ -63,6 +63,7 @@ app.post('/users', (req, res) => {
             _id: req.body.username,
             name: req.body.name,
             email: req.body.email,
+            tasks: [],
             password: bcrypt.hashSync(req.body.password, bcrypt.genSaltSync()),
             authToken
           }
@@ -72,7 +73,8 @@ app.post('/users', (req, res) => {
               res.send({
                 _id: eachRecord._id,
                 name: eachRecord.name,
-                email: eachRecord.email
+                email: eachRecord.email,
+                authToken
               })
             )
             .catch((error) => res.send({ error }))
@@ -83,6 +85,19 @@ app.post('/users', (req, res) => {
     res.send({ error: 'Missing fields.' })
   }
 })
+
+
+app.get("/users/:username/tasks/:authToken", (req, res) => {
+  const {username} = req.params;
+  const {authToken} = req.params;
+
+  db.findOne({_id: username, authToken: authToken})
+  .then(user =>{
+    // console.log({user})
+    res.send(user)
+  })
+})
+
 // post route to add tasks for each loggedIn user
 app.post("/users/:username/tasks", (req, res)=>{
   const {username} = req.params;
@@ -97,7 +112,7 @@ app.post("/users/:username/tasks", (req, res)=>{
       .then(()=>{
         res.send({tasks: user.tasks})})
       .catch((error) =>{
-        res.status(500).send({error: "erroror occurred while updating tasks!"});
+        res.status(500).send({error: "error occurred while updating tasks!"});
       })
     } else{
       res.status(401).send({error: "Authentication failed!"}); //lack valid authentication credentials
@@ -120,14 +135,14 @@ app.patch("/users/:username/tasks/:taskId", (req, res)=>{
       if(taskIdx > -1){
         user.tasks[taskIdx] = {...user.tasks[taskIdx], txt, completed};
 
-      db.updateOne({_id: username}, {$set: {tasks: user.tasks}}) 
+      db.updateOne({_id: username}, {$set: {tasks: user.tasks}})
       .then(()=> res.send({task: user.tasks[taskIdx]}))
       .catch(error => res.status(500).send({error: "error Occurred while updating task!"}));
     } else{
       res.status(404).send({error: "Task not found!"});
     }
   } else{
-    res.status(401).send({error: "Authentication failed!"})
+    res.status(401).send({error: "Authentication failed!"});
   }
   })
   .catch(error => res.status(500).send({error}));
@@ -144,7 +159,7 @@ app.delete("/users/:username/tasks/:taskId", (req, res) =>{
       const filteredTasks = user.tasks.filter(task => task.id != taskId);
       db.updateOne({_id: username}, {$set: {tasks: filteredTasks}})
       .then(()=> res.send({ok: true}))
-      .catch(error => res.status(500).send({error: "erroror occurred while deleting task!"}));
+      .catch(error => res.status(500).send({error: "error occurred while deleting task!"}));
     } else{
       res.status(401).send({error: "Authentication failed!"});
     }
