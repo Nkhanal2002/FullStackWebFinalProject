@@ -22,7 +22,7 @@ Before you start, ensure you have installed the following:
 
 ## Usage
 
-To run the local server and vite server, perform both command separately on your terminal, one for local server, and one for TailwindCSS for UI repectively:
+To run the local server and vite server, perform both command separately on your terminal, one for local server, and another for TailwindCSS for UI repectively:
 ```bash
 node index.js
 npm run dev
