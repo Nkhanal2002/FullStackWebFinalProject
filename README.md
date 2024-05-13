@@ -4,7 +4,7 @@ A simple and interactive to-do list application that allows users to manage thei
 
 ## Demo Video
 Here is a quick demo of this app in action:
-[![Watch the video]](https://github.com/Nkhanal2002/FullStackWebFinalProject/FinalProjectVideo.mp4)
+[![Watch the video]](https://github.com/Nkhanal2002/FullStackWebFinalProject/blob/main/FinalProjectVideo.mp4)
 
 The video shows how to navigate the app and use its main features.
 
