@@ -2,12 +2,6 @@
 
 A simple and interactive to-do list application that allows users to manage their tasks efficiently. The application features user authentication and real-time task management.
 
-## Demo Video
-Here is a quick demo of this app in action:
-[![Watch the video]](https://github.com/Nkhanal2002/FullStackWebFinalProject/blob/main/FinalProjectVideo.mp4)
-
-The video shows how to navigate the app and use its main features.
-
 ## Features
 
 - **User Authentication**: Secure login and signup functionalities
